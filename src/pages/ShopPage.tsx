@@ -59,21 +59,29 @@ const ShopPage: React.FC = () => {
     }
 
     switch (sortBy) {
-      case "Price: Low to High":
-        result.sort((a, b) => a.price - b.price);
-        break;
-      case "Price: High to Low":
-        result.sort((a, b) => b.price - a.price);
-        break;
-      case "Newest":
-        result.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
-        break;
-      case "Best Sellers":
-        result.sort(
-          (a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0),
-        );
-        break;
-    }
+  case "Price: Low to High":
+    result.sort((a, b) => a.price - b.price);
+    break;
+  case "Price: High to Low":
+    result.sort((a, b) => b.price - a.price);
+    break;
+  case "Newest":
+    result.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+    break;
+  case "Best Sellers":
+    result.sort(
+      (a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0),
+    );
+    break;
+  default:
+    // Default sort: MIDI products first, then others
+    result.sort((a, b) => {
+      const aIsMidi = a.category?.toLowerCase() === "midi" ? 0 : 1;
+      const bIsMidi = b.category?.toLowerCase() === "midi" ? 0 : 1;
+      return aIsMidi - bIsMidi;
+    });
+    break;
+}
 
     return result;
   }, [
