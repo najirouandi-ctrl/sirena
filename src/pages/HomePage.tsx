@@ -30,14 +30,13 @@ const HomePage: React.FC = () => {
   });
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  
   const { products: allProducts } = useProducts();
-  const latestProducts = allProducts
-    .sort((a, b) => {
-      const dateA = new Date(a.created_at || 0).getTime();
-      const dateB = new Date(b.created_at || 0).getTime();
-      return dateB - dateA; // Sort by created_at descending (newest first)
-    })
-    .slice(0, 3);
+  
+  const featuredIds = ["1", "2", "3", "4"];
+  const latestProducts = featuredIds
+  .map(id => allProducts.find(p => p.id === id))
+  .filter(Boolean);
 
   return (
     <PageTransition>
