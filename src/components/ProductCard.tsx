@@ -48,7 +48,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
             <motion.img
               src={product.images[0]}
               alt={product.name}
-              className="w-full h-full object-cover absolute inset-0 transition-all duration-700"
+              className={`w-full h-full object-cover absolute inset-0 transition-all duration-700 ${
+                outOfStock ? "opacity-60 grayscale" : ""
+              }`}
               style={{
                 opacity: hovered && product.images[1] ? 0 : imageLoaded ? 1 : 0,
               }}
@@ -59,7 +61,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
               <motion.img
                 src={product.images[1]}
                 alt={product.name}
-                className="w-full h-full object-cover absolute inset-0 transition-all duration-700"
+                className={`w-full h-full object-cover absolute inset-0 transition-all duration-700 ${
+                  outOfStock ? "opacity-60 grayscale" : ""
+                }`}
                 style={{ opacity: hovered ? 1 : 0 }}
               />
             )}
@@ -72,25 +76,26 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
 
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
-            {product.isNew && (
+            {/* Sold Out Badge (priority - shows first) */}
+            {outOfStock && (
+              <span className="bg-[#1a1a1a] text-white font-inter text-[9px] uppercase tracking-[0.15em] px-2.5 py-1">
+                Sold Out
+              </span>
+            )}
+
+            {/* Other badges only show if NOT sold out */}
+            {!outOfStock && product.isNew && (
               <span className="bg-[#1a1a1a] text-white font-inter text-[9px] uppercase tracking-[0.15em] px-2.5 py-1">
                 New
               </span>
             )}
-            {product.isBestSeller && (
+            {!outOfStock && product.isBestSeller && (
               <span className="bg-[#c9a96e] text-white font-inter text-[9px] uppercase tracking-[0.15em] px-2.5 py-1">
                 Bestseller
               </span>
             )}
-            {product.isSale && (
-              <span className="bg-rose-500 text-white font-inter text-[9px] uppercase tracking-[0.15em] px-2.5 py-1">
-                Sale
-              </span>
-            )}
-
-            {/* Sale Badge (only if not sold out) */}
             {!outOfStock && product.isSale && (
-              <span className="absolute top-3 left-3 bg-red-500 text-white text-[10px] uppercase tracking-widest px-3 py-1 z-10 font-inter">
+              <span className="bg-rose-500 text-white font-inter text-[9px] uppercase tracking-[0.15em] px-2.5 py-1">
                 Sale
               </span>
             )}
@@ -132,35 +137,41 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
             </motion.button>
           </div>
 
-          {/* Quick Add */}
-          <motion.div
-            className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm py-3 px-4 flex items-center justify-between transition-all duration-400"
-            style={{
-              transform: hovered ? "translateY(0)" : "translateY(100%)",
-              opacity: hovered ? 1 : 0,
-            }}
-          >
-            <span className="font-inter text-[10px] uppercase tracking-[0.15em] text-gray-500">
-              Choisissez la taille
-            </span>
-            <div className="flex gap-1.5">
-              {product.sizes.slice(0, 4).map((size) => (
-                <Link
-                  key={size}
-                  to={`/products/${product.slug}`}
-                  className="w-7 h-7 border border-gray-200 flex items-center justify-center font-inter text-[10px] text-gray-600 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors"
-                >
-                  {size}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+          {/* Quick Add - only show if not sold out */}
+          {!outOfStock && (
+            <motion.div
+              className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm py-3 px-4 flex items-center justify-between transition-all duration-400"
+              style={{
+                transform: hovered ? "translateY(0)" : "translateY(100%)",
+                opacity: hovered ? 1 : 0,
+              }}
+            >
+              <span className="font-inter text-[10px] uppercase tracking-[0.15em] text-gray-500">
+                Choisissez la taille
+              </span>
+              <div className="flex gap-1.5">
+                {product.sizes.slice(0, 4).map((size) => (
+                  <Link
+                    key={size}
+                    to={`/products/${product.slug}`}
+                    className="w-7 h-7 border border-gray-200 flex items-center justify-center font-inter text-[10px] text-gray-600 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors"
+                  >
+                    {size}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Info */}
         <div className="pt-4 pb-2">
           <Link to={`/products/${product.slug}`} className="block group/link">
-            <h3 className="font-playfair text-[15px] text-[#1a1a1a] group-hover/link:text-[#c9a96e] transition-colors leading-snug">
+            <h3 className={`font-playfair text-[15px] transition-colors leading-snug ${
+              outOfStock 
+                ? "text-gray-400" 
+                : "text-[#1a1a1a] group-hover/link:text-[#c9a96e]"
+            }`}>
               {product.name}
             </h3>
           </Link>
@@ -168,7 +179,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
             {product.description}
           </p>
           <div className="flex items-center gap-3 mt-2">
-            <span className="font-inter text-sm text-[#1a1a1a]">
+            <span className={`font-inter text-sm ${
+              outOfStock ? "text-gray-400 line-through" : "text-[#1a1a1a]"
+            }`}>
               {product.price} DH
             </span>
             {product.originalPrice && (
