@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Heart, Star, MessageSquare } from "lucide-react";
+import { X, Heart, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Product } from "../data/products";
 import { useWishlist } from "../context/WishlistContext";
@@ -81,25 +81,6 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
                 <h2 className="font-playfair text-2xl text-[#1a1a1a] mt-2">
                   {product.name}
                 </h2>
-
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="flex items-center gap-0.5">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        size={12}
-                        className={
-                          i < Math.floor(product.rating)
-                            ? "text-[#c9a96e] fill-[#c9a96e]"
-                            : "text-gray-300"
-                        }
-                      />
-                    ))}
-                  </div>
-                  <span className="font-inter text-xs text-gray-400">
-                    ({product.reviewCount})
-                  </span>
-                </div>
 
                 <div className="flex items-center gap-3 mt-3">
                   <span className="font-playfair text-xl text-[#1a1a1a]">
