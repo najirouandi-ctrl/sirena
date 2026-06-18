@@ -308,7 +308,7 @@ const ProductPage: React.FC = () => {
                 {/* Category + Share */}
                 <div className="flex items-center justify-between mb-3">
                   <span className="font-inter text-[10px] uppercase tracking-[0.25em] text-[#c9a96e]">
-                    {product.category} robe
+                    
                   </span>
                   <button
                     onClick={handleShare}
