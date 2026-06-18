@@ -7,7 +7,7 @@ import PageTransition from "../components/PageTransition";
 import ProductCard from "../components/ProductCard";
 import { useProducts } from "../hooks/useProducts";
 
-const heroImage = "./assets/images/hero-img.jpeg";
+const heroImage = "https://res.cloudinary.com/dxag5xfm6/image/upload/v1781793347/hero-img_urapun.jpg";
 
 const instagramImages = [
   "https://images.unsplash.com/photo-1762341545072-9a69cc0cfcee?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
