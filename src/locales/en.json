@@ -1,0 +1,266 @@
+{
+  "common": {
+    "brand": "Siréna",
+    "language": "Language",
+    "fr": "French",
+    "en": "English",
+    "ar": "Arabic"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "shop": "Dress Shop",
+    "about": "About Us",
+    "journal": "Journal",
+    "contact": "Contact",
+    "wishlist": "Wishlist",
+    "privacy": "Privacy Policy"
+  },
+
+  "header": {
+    "search": "Search for pieces...",
+    "noResults": "No results found",
+    "cart": "Shopping Bag",
+    "cartEmpty": "Your shopping bag is empty",
+    "cartItems": "{{count}} items"
+  },
+
+  "hero": {
+    "seasonLabel": "Autumn / Winter Collection",
+    "mainTitle": "Elegance in",
+    "mainTitleHighlight": "SIRÉNA",
+    "subtitle": "Beautifully curated pieces for the modern woman who moves through the world with confidence and purpose.",
+    "ctaShop": "Shop Now",
+    "ctaAbout": "Our Story",
+    "scroll": "Scroll",
+    "dressedIn": "Elegance in",
+    "grace": "Motion",
+    "exquisitelyHandcrafted": "Beautifully curated pieces for the modern woman who moves through the world with confidence and purpose."
+  },
+
+  "marquee": {
+    "newCollection": "New Collection",
+    "freeShipping": "Complimentary Shipping",
+    "exclusive": "Exclusively at Siréna"
+  },
+
+  "shop": {
+    "heroLabel": "The Collection",
+    "title": "Dress Shop",
+    "results": "{{count}} pieces",
+    "searchPlaceholder": "Search dresses...",
+    "categoryLabel": "Category",
+    "sizesLabel": "Size",
+    "priceLabel": "Price: {{min}} DH — {{max}} DH",
+    "saleOnly": "Sale Items Only",
+    "clearFilters": "Reset Filters",
+    "sortLabel": "Sort By:",
+    "categories": {
+      "All": "All",
+      "Midi": "Midi",
+      "Maxi": "Maxi",
+      "Mini": "Mini"
+    },
+    "sortOptions": {
+      "Featured": "Featured",
+      "Price: Low to High": "Price: Low to High",
+      "Price: High to Low": "Price: High to Low",
+      "Newest": "Newest Arrivals",
+      "Best Sellers": "Best Sellers"
+    },
+    "noProducts": "No pieces found"
+  },
+
+  "home": {
+    "featuredLabel": "Signature Selection",
+    "featuredTitle": "The New Collection",
+    "featuredDescription": "A refined selection of pieces for women who seek elegance, quality, and timeless style.",
+    "viewAllDresses": "View All Dresses",
+
+    "philosophyLabel": "Our Philosophy",
+    "philosophyTitleA": "Beauty That",
+    "philosophyTitleB": "Endures",
+
+    "philosophyParagraph1": "At SIRÉNA, we believe true elegance is timeless. It is found in simplicity, intention, and the quiet confidence of the modern woman.",
+
+    "philosophyParagraph2": "Founded in 2024 and based in Marrakech, we create refined pieces inspired by both timeless fashion and contemporary style. Our vision is to design clothing that elevates everyday life with effortless sophistication.",
+
+    "philosophyParagraph3": "Each collection is thoughtfully crafted with attention to detail, quality fabrics, and flattering silhouettes that celebrate natural beauty. Every piece is made to accompany women who embrace elegance in all moments of life—confident, graceful, and effortlessly stylish.",
+
+    "philosophyCta": "Discover Our Story",
+
+    "bestSellersLabel": "Customer Favorites",
+    "bestSellersTitle": "Best Sellers",
+
+    "instagramHandle": "@sirena.ls",
+    "instagramTitle": "Step Into the World of Siréna",
+    "instagramSubtitle": "Discover the lifestyle behind our collections.",
+
+    "newsletterLabel": "The Inner Circle",
+    "newsletterTitle": "Join Our World",
+    "newsletterDescription": "Be the first to discover new collections, exclusive events, and stories behind the brand. Designed for those who appreciate true elegance.",
+
+    "newsletterPlaceholder": "Your email address",
+    "newsletterSubscribe": "Subscribe",
+
+    "newsletterPrivacy": "No spam. Unsubscribe anytime. Your privacy is always respected.",
+
+    "valuesTitle": "What We Stand For",
+    "valuesLabel": "Our Values",
+
+    "valueOneTitle": "Complimentary Shipping",
+    "valueOneDesc": "Enjoy free shipping on every order, with no minimum purchase required.",
+
+    "valueTwoTitle": "Easy Returns",
+    "valueTwoDesc": "Benefit from a 14-day return or exchange period, subject to our return policy.",
+
+    "valueThreeTitle": "Quality & Curation",
+    "valueThreeDesc": "Every piece is thoughtfully selected to ensure exceptional style, quality, and elegance.",
+
+    "valueFourTitle": "Secure Payment",
+    "valueFourDesc": "Enjoy a simple and secure cash-on-delivery experience. Pay only when your order arrives, with complete confidence and peace of mind."
+  },
+
+  "product": {
+    "addToCart": "Add to Bag",
+    "addToWishlist": "Add to Wishlist",
+    "removeFromWishlist": "Remove from Wishlist",
+    "quickView": "Quick View",
+    "size": "Size",
+    "quantity": "Quantity",
+    "price": "Price",
+    "description": "Description",
+    "details": "Details",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "new": "New",
+    "sale": "Sale",
+    "relatedProducts": "You May Also Like"
+  },
+
+  "cart": {
+    "title": "Your Shopping Bag",
+    "empty": "Your shopping bag is empty",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "remove": "Remove",
+    "quantity": "Quantity"
+  },
+
+  "wishlist": {
+    "title": "Wishlist",
+    "empty": "Your wishlist is empty",
+    "viewWishlist": "View Wishlist",
+    "yourCollection": "Your Collection",
+    "pieces": "saved pieces"
+  },
+
+  "footer": {
+    "newsletter": "Stay Within the World of Siréna",
+    "newsletterSubtitle": "Early access to new collections, exclusive offers, and fashion inspiration.",
+
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+
+    "brand": "Siréna",
+    "brandDescription": "Carefully curated collections for the modern woman. Elegance, quality, and refinement for every day.",
+
+    "shop": "Shop",
+    "shopNewArrivals": "New Arrivals",
+    "shopDresses": "Dresses",
+    "shopMidi": "Midi Dresses",
+    "shopMaxi": "Maxi Dresses",
+    "shopMini": "Mini Dresses",
+    "shopSale": "Sale",
+
+    "about": "About",
+    "aboutOurStory": "Our Story",
+    "aboutJournal": "Journal",
+    "aboutSustainability": "Sustainability",
+    "aboutCareers": "Careers",
+    "aboutPress": "Press",
+
+    "customer": "Customer Care",
+    "customerContact": "Contact Us",
+    "customerSizeGuide": "Size Guide",
+    "customerShipping": "Shipping & Returns",
+    "customerPrivacy": "Privacy Policy",
+    "customerTerms": "Terms & Conditions",
+
+    "company": "Company",
+
+    "connect": "Stay Connected",
+    "follow": "Follow Us",
+
+    "contact": "Contact Us",
+    "faq": "FAQ",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "about_link": "About Us",
+
+    "copyright": "© {{year}} Siréna. All Rights Reserved.",
+
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "pinterest": "Pinterest",
+    "tiktok": "TikTok"
+  },
+
+  "contact": {
+    "title": "We'd Love to Hear From You",
+    "heading": "Get in Touch",
+    "subtitle": "Our customer care team is here to assist you. Reach out and a member of our team will personally respond.",
+
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "successMessage": "Thank you for your message. We'll be in touch soon."
+    },
+
+    "email": "Email",
+    "emailAddress": "errami01@icloud.com",
+    "emailResponse": "We respond within 24 hours",
+
+    "phone": "Phone",
+    "phoneNumber": "+212 6 88 03 14 57",
+    "phoneHours": "We respond via WhatsApp within 24 hours",
+
+    "hours": "Business Hours",
+    "hoursWeek": "Mon – Sun: 10:00 AM – 10:00 PM",
+    "hoursSaturday": "Always available to serve you"
+  },
+
+  "about": {
+    "title": "About Us",
+    "intro": "Welcome to Siréna",
+
+    "about_the_house": "About the House",
+
+    "fashion_with_soul": "A Fashion House",
+    "with_soul": "With Soul",
+
+    "founded": "Founded in 2024 and based in Marrakech, we create refined pieces inspired by both timeless fashion and contemporary style. Our vision is to design clothing that elevates everyday life with effortless sophistication."
+  },
+
+  "journal": {
+    "title": "Journal",
+    "latestArticles": "Latest Articles",
+    "readMore": "Read More",
+    "stories_from_atelier": "Stories from the Atelier"
+  },
+
+  "errors": {
+    "notFound": "Page Not Found",
+    "notFoundMessage": "We're sorry, the page you're looking for does not exist."
+  }
+}
