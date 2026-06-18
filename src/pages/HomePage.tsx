@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
   
   const { products: allProducts } = useProducts();
   
-  const featuredIds = ["1", "2", "3", "4"];
+  const featuredIds = ["1", "4", "2", "3"];
   const latestProducts = featuredIds
   .map(id => allProducts.find(p => p.id === id))
   .filter(Boolean);
