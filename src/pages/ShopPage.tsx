@@ -123,7 +123,7 @@ const ShopPage: React.FC = () => {
       {/* Hero Banner */}
       <div className="relative h-64 md:h-80 bg-[#1a1a1a] overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/32263994/pexels-photo-32263994.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=1400"
+          src="https://res.cloudinary.com/dxag5xfm6/image/upload/v1781803191/WhatsApp_Image_2026-06-18_at_17.48.12_vhcjqg.jpg"
           alt="Shop Dresses"
           className="w-full h-full object-cover opacity-40"
         />
