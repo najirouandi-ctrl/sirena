@@ -202,20 +202,6 @@ const HomePage: React.FC = () => {
             </Link>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
-            {instagramImages.map((src, i) => (
-              <div
-                key={i}
-                className="aspect-square overflow-hidden rounded-2xl"
-              >
-                <img
-                  src={src}
-                  alt={`Instagram image ${i + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
