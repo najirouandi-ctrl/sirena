@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Heart, Eye } from 'lucide-react';
-import { Product } from '../data/products';
-import { useWishlist } from '../context/WishlistContext';
-import QuickViewModal from './QuickViewModal';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Heart, Eye } from "lucide-react";
+import { Product } from "../data/products";
+import { useWishlist } from "../context/WishlistContext";
+import QuickViewModal from "./QuickViewModal";
 
 interface ProductCardProps {
   product: Product;
@@ -18,13 +18,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
   const { isWishlisted, toggleWishlist } = useWishlist();
   const wishlisted = isWishlisted(product.id);
 
+  const isOutOfStock = () => {
+    if (!product.inventory || typeof product.inventory !== "object")
+      return true;
+    const totalStock = Object.values(product.inventory).reduce(
+      (sum: number, qty) => sum + Number(qty || 0),
+      0,
+    );
+    return totalStock === 0;
+  };
+
+  const outOfStock = isOutOfStock();
+
   return (
     <>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.6, delay: index * 0.08, ease: 'easeOut' }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
         className="group relative"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -37,7 +49,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
               src={product.images[0]}
               alt={product.name}
               className="w-full h-full object-cover absolute inset-0 transition-all duration-700"
-              style={{ opacity: hovered && product.images[1] ? 0 : (imageLoaded ? 1 : 0) }}
+              style={{
+                opacity: hovered && product.images[1] ? 0 : imageLoaded ? 1 : 0,
+              }}
               onLoad={() => setImageLoaded(true)}
             />
             {/* Secondary Image on hover */}
@@ -73,25 +87,35 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
                 Sale
               </span>
             )}
+
+            {/* Sale Badge (only if not sold out) */}
+            {!outOfStock && product.isSale && (
+              <span className="absolute top-3 left-3 bg-red-500 text-white text-[10px] uppercase tracking-widest px-3 py-1 z-10 font-inter">
+                Sale
+              </span>
+            )}
           </div>
 
           {/* Actions */}
           <div
             className="absolute right-3 top-3 flex flex-col gap-2 z-10 transition-all duration-300"
-            style={{ opacity: hovered ? 1 : 0, transform: hovered ? 'translateX(0)' : 'translateX(10px)' }}
+            style={{
+              opacity: hovered ? 1 : 0,
+              transform: hovered ? "translateX(0)" : "translateX(10px)",
+            }}
           >
             <motion.button
               onClick={() => toggleWishlist(product)}
               whileTap={{ scale: 0.9 }}
               className={`w-9 h-9 bg-white flex items-center justify-center shadow-sm hover:bg-[#c9a96e] group/btn transition-colors duration-200 ${
-                wishlisted ? 'bg-[#c9a96e]' : ''
+                wishlisted ? "bg-[#c9a96e]" : ""
               }`}
               aria-label="Add to wishlist"
             >
               <Heart
                 size={15}
                 strokeWidth={1.5}
-                className={`transition-colors ${wishlisted ? 'text-white fill-white' : 'text-gray-600 group-hover/btn:text-white'}`}
+                className={`transition-colors ${wishlisted ? "text-white fill-white" : "text-gray-600 group-hover/btn:text-white"}`}
               />
             </motion.button>
             <motion.button
@@ -100,7 +124,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
               className="w-9 h-9 bg-white flex items-center justify-center shadow-sm hover:bg-[#c9a96e] group/btn transition-colors duration-200"
               aria-label="Quick view"
             >
-              <Eye size={15} strokeWidth={1.5} className="text-gray-600 group-hover/btn:text-white transition-colors" />
+              <Eye
+                size={15}
+                strokeWidth={1.5}
+                className="text-gray-600 group-hover/btn:text-white transition-colors"
+              />
             </motion.button>
           </div>
 
@@ -108,7 +136,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
           <motion.div
             className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm py-3 px-4 flex items-center justify-between transition-all duration-400"
             style={{
-              transform: hovered ? 'translateY(0)' : 'translateY(100%)',
+              transform: hovered ? "translateY(0)" : "translateY(100%)",
               opacity: hovered ? 1 : 0,
             }}
           >
@@ -116,7 +144,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
               Choisissez la taille
             </span>
             <div className="flex gap-1.5">
-              {product.sizes.slice(0, 4).map(size => (
+              {product.sizes.slice(0, 4).map((size) => (
                 <Link
                   key={size}
                   to={`/products/${product.slug}`}
@@ -136,11 +164,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
               {product.name}
             </h3>
           </Link>
-          <p className="font-inter text-xs text-gray-400 mt-1 line-clamp-1">{product.description}</p>
+          <p className="font-inter text-xs text-gray-400 mt-1 line-clamp-1">
+            {product.description}
+          </p>
           <div className="flex items-center gap-3 mt-2">
-            <span className="font-inter text-sm text-[#1a1a1a]">{product.price} DH</span>
+            <span className="font-inter text-sm text-[#1a1a1a]">
+              {product.price} DH
+            </span>
             {product.originalPrice && (
-              <span className="font-inter text-xs text-gray-400 line-through">${product.originalPrice}</span>
+              <span className="font-inter text-xs text-gray-400 line-through">
+                ${product.originalPrice}
+              </span>
             )}
           </div>
         </div>
