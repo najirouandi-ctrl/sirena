@@ -32,16 +32,6 @@ const ShopPage: React.FC = () => {
   const filteredAndSorted = useMemo(() => {
     let result = [...allProducts];
 
-    // Hide products with empty inventory or zero total stock
-    result = result.filter((p) => {
-      if (!p.inventory || typeof p.inventory !== "object") return false;
-      const totalStock = Object.values(p.inventory).reduce(
-        (sum: number, qty) => sum + Number(qty || 0),
-        0
-      );
-      return totalStock > 0;
-    });
-
     if (selectedCategory !== "Toutes") {
       result = result.filter(
         (p) => p.category === selectedCategory.toLowerCase(),
