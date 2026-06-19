@@ -157,7 +157,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
                     }`}
                   >
                     <MessageSquare size={15} strokeWidth={1.5} />
-                    Commander via WhatsApp
+                    Order via WhatsApp
                   </button>
                   <button
                     onClick={() => toggleWishlist(product)}
