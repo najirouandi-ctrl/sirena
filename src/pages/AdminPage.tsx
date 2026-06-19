@@ -21,6 +21,8 @@ import {
   ArrowLeft,
 } from "lucide-react";
 
+const API_BASE = import.meta.env.VITE_API_BASE || "https://sirena-production.up.railway.app/api";
+
 const makeId = () => `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
 const slugify = (s: string) =>
   s
@@ -161,7 +163,7 @@ const AdminPage: React.FC = () => {
       try {
         const formData = new FormData();
         formData.append("file", files[i]);
-        const res = await fetch("http://localhost:3001/api/upload", {
+        const res = await fetch(`${API_BASE}/upload`, {
           method: "POST",
           body: formData,
         });
