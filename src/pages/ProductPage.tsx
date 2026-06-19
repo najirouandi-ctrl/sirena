@@ -162,7 +162,7 @@ const ProductPage: React.FC = () => {
         <div className="space-y-3">
           <div className="flex items-start gap-3">
             <p className="font-inter text-sm text-gray-600">
-              At Siréna, we offer **free delivery on orders over 800 DHS**. Every package is carefully prepared and shipped promptly to ensure a fast, reliable, and secure experience. We are committed to making sure your pieces arrive at your doorstep in impeccable condition.
+              At Siréna, we offer free delivery on orders over 800 DHS. Every package is carefully prepared and shipped promptly to ensure a fast, reliable, and secure experience. We are committed to making sure your pieces arrive at your doorstep in impeccable condition.
             </p>
           </div>
         </div>
