@@ -164,7 +164,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex items-center gap-3">
             <span className="font-inter text-[9px] text-white/30 tracking-widest">
-              Commandes exclusivement via WhatsApp
+              Orders exclusively via WhatsApp
             </span>
           </div>
         </div>
