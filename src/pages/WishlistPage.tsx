@@ -116,7 +116,7 @@ const WishlistPage: React.FC = () => {
                         className="flex items-center gap-2 w-full justify-center font-inter text-[11px] uppercase tracking-[0.15em] border border-gray-200 text-gray-600 py-2.5 mt-3 hover:border-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all duration-300"
                       >
                         <MessageSquare size={13} strokeWidth={1.5} />
-                        Commander via WhatsApp
+                        Order via WhatsApp
                       </button>
                     </div>
                   </motion.div>
