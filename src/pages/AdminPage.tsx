@@ -34,7 +34,7 @@ const AdminPage: React.FC = () => {
   const [isAuth, setIsAuth] = useState(false);
   const [items, setItems] = useState<Product[]>([]);
   const [editing, setEditing] = useState<Product | null>(null);
-  const [showForm, setShowForm] = useState(false); // mobile: toggle form visibility
+  const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState<any>({
     name: "",
     price: 0,
@@ -122,7 +122,6 @@ const AdminPage: React.FC = () => {
     setUrlInput("");
     setShowForm(true);
     setInventoryOpen(false);
-    // scroll to top on mobile
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -263,10 +262,10 @@ const AdminPage: React.FC = () => {
     URL.revokeObjectURL(url);
   };
 
-  // ─── Form Panel ────────────────────────────────────────────────────────────
-  const FormPanel = () => (
+  // ─── Form Panel as a variable (NOT a component) ──────────────────────────
+  const formPanel = (
     <div className="bg-white rounded-xl border border-gray-200 shadow-lg p-4 sm:p-6 space-y-4 sm:space-y-5">
-      {/* Form header — mobile only back button */}
+      {/* Form header */}
       <div className="flex items-center justify-between">
         <div>
           <h2 className="font-semibold text-base sm:text-lg text-[#1a1a1a] mb-1">
@@ -274,7 +273,6 @@ const AdminPage: React.FC = () => {
           </h2>
           <div className="h-1 w-10 bg-gradient-to-r from-[#c9a96e] to-transparent rounded-full" />
         </div>
-        {/* Close button visible on mobile/tablet when form is shown as overlay */}
         <button
           onClick={closeForm}
           className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-all text-gray-500"
@@ -358,7 +356,6 @@ const AdminPage: React.FC = () => {
           Images (max 5)
         </label>
         <div className="space-y-2">
-          {/* File upload — hidden native input, styled button */}
           <label className="flex items-center gap-2 cursor-pointer w-full border border-dashed border-gray-300 rounded-lg px-3 py-2.5 hover:border-[#c9a96e] hover:bg-[#c9a96e]/5 transition-all text-sm text-gray-500">
             <Upload size={16} className="text-[#c9a96e] flex-shrink-0" />
             <span>{uploading ? "Upload en cours…" : "Choisir des fichiers"}</span>
@@ -372,7 +369,6 @@ const AdminPage: React.FC = () => {
             />
           </label>
 
-          {/* URL input */}
           <div className="flex gap-2">
             <input
               type="text"
@@ -395,7 +391,6 @@ const AdminPage: React.FC = () => {
             <p className="text-xs text-red-600 font-medium">❌ {uploadError}</p>
           )}
 
-          {/* Image previews */}
           {(form.images || []).length > 0 && (
             <div className="grid grid-cols-5 gap-1.5 mt-2">
               {(form.images || []).map((src: string, i: number) => (
@@ -437,7 +432,7 @@ const AdminPage: React.FC = () => {
         />
       </div>
 
-      {/* Inventory — collapsible on mobile */}
+      {/* Inventory */}
       {form.sizes && (
         <div>
           <button
@@ -517,7 +512,6 @@ const AdminPage: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              {/* Export — icon only on mobile */}
               <button
                 onClick={exportProducts}
                 className="p-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm font-medium flex items-center gap-2"
@@ -527,7 +521,6 @@ const AdminPage: React.FC = () => {
                 <span className="hidden sm:inline">Exporter</span>
               </button>
 
-              {/* New article — always visible */}
               <button
                 onClick={openNewForm}
                 className="px-3 py-2 sm:px-4 bg-gradient-to-r from-[#c9a96e] to-[#b8985c] text-white rounded-lg hover:shadow-lg transition-all text-sm font-medium flex items-center gap-2"
@@ -536,7 +529,6 @@ const AdminPage: React.FC = () => {
                 <span className="hidden xs:inline sm:inline">Nouveau</span>
               </button>
 
-              {/* Logout */}
               <button
                 onClick={handleLogout}
                 className="px-3 py-2 sm:px-4 bg-red-50 text-red-600 border border-red-200 rounded-lg hover:bg-red-100 transition-all text-sm font-medium"
@@ -551,18 +543,17 @@ const AdminPage: React.FC = () => {
         {/* ── Main ── */}
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-10">
 
-          {/* Mobile / Tablet: form shown above list when open */}
+          {/* Mobile form */}
           {showForm && (
             <div className="lg:hidden mb-6">
-              <FormPanel />
+              {formPanel}
             </div>
           )}
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 
-            {/* ── Product List ── */}
+            {/* Product List */}
             <div className="lg:col-span-2">
-              {/* Item count badge */}
               {items.length > 0 && (
                 <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-wide">
                   {items.length} article{items.length > 1 ? "s" : ""}
@@ -590,7 +581,6 @@ const AdminPage: React.FC = () => {
                       className="group bg-white rounded-xl border border-gray-200 hover:border-[#c9a96e] hover:shadow-md transition-all duration-300 overflow-hidden"
                     >
                       <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-5">
-                        {/* Thumbnail */}
                         <div className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                           <img
                             src={p.images?.[0] || "https://via.placeholder.com/80"}
@@ -599,7 +589,6 @@ const AdminPage: React.FC = () => {
                           />
                         </div>
 
-                        {/* Info */}
                         <div className="flex-1 min-w-0">
                           <h3 className="font-semibold text-[#1a1a1a] truncate text-sm sm:text-base">
                             {p.name}
@@ -620,7 +609,6 @@ const AdminPage: React.FC = () => {
                           </p>
                         </div>
 
-                        {/* Actions */}
                         <div className="flex gap-2 flex-shrink-0">
                           <button
                             onClick={() => onEdit(p)}
@@ -644,16 +632,16 @@ const AdminPage: React.FC = () => {
               </div>
             </div>
 
-            {/* ── Sidebar Form (desktop only) ── */}
+            {/* Desktop Form */}
             <div className="hidden lg:block">
               <div className="sticky top-28">
-                <FormPanel />
+                {formPanel}
               </div>
             </div>
           </div>
         </div>
 
-        {/* ── Mobile FAB: "Nouveau" if form is hidden ── */}
+        {/* Mobile FAB */}
         {!showForm && (
           <button
             onClick={openNewForm}
