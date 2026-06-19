@@ -7,6 +7,8 @@ import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import crypto from "crypto";
+import { v2 as cloudinary } from "cloudinary";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
 
 dotenv.config();
 
@@ -17,19 +19,23 @@ app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
-const uploadsDir = path.join(__dirname, "../public/uploads");
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
-}
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadsDir);
-  },
-  filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    const ext = path.extname(file.originalname);
-    cb(null, `img-${uniqueSuffix}${ext}`);
+// Use Cloudinary storage instead of disk storage
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "sirena",
+    allowed_formats: ["jpg", "jpeg", "png", "webp"],
+    public_id: (req, file) => {
+      const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+      return `img-${uniqueSuffix}`;
+    },
   },
 });
 
@@ -46,10 +52,11 @@ const upload = multer({
 });
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "",
-  database: process.env.DB_NAME || "sirena",
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
@@ -90,26 +97,27 @@ const normalizeProduct = (row) => ({
   isSale: Boolean(row.isSale),
 });
 
+// Upload single file to Cloudinary
 app.post("/api/upload", upload.single("file"), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: "No file uploaded" });
   }
-  const relativePath = `/uploads/${req.file.filename}`;
-  res.json({ path: relativePath });
+  // req.file.path now contains the Cloudinary URL
+  res.json({ path: req.file.path });
 });
 
+// Upload multiple files to Cloudinary
 app.post("/api/upload-batch", upload.array("files", 5), (req, res) => {
   if (!req.files || req.files.length === 0) {
     return res.status(400).json({ error: "No files uploaded" });
   }
-  const paths = req.files.map((file) => `/uploads/${file.filename}`);
+  const paths = req.files.map((file) => file.path);
   res.json({ paths });
 });
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
-
 
 app.get("/api/products", async (req, res) => {
   try {
@@ -127,7 +135,7 @@ app.get("/api/products/slug/:slug", async (req, res) => {
       "SELECT * FROM products WHERE slug = ? LIMIT 1",
       [req.params.slug],
     );
-    if (!rows || Array.isArray(rows) && rows.length === 0) {
+    if (!rows || (Array.isArray(rows) && rows.length === 0)) {
       return res.status(404).json({ message: "Product not found" });
     }
     res.json(normalizeProduct(rows[0]));
@@ -141,7 +149,17 @@ app.post("/api/products", async (req, res) => {
   try {
     const data = req.body;
     const id = data.id || crypto.randomUUID();
-    const slug = data.slug || String(data.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    
+    let baseSlug = data.slug || String(data.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    let slug = baseSlug;
+    let counter = 1;
+    
+    while (true) {
+      const existing = await query("SELECT id FROM products WHERE slug = ?", [slug]);
+      if (existing.length === 0) break;
+      slug = `${baseSlug}-${counter}`;
+      counter++;
+    }
 
     await query(
       `INSERT INTO products
@@ -173,7 +191,7 @@ app.post("/api/products", async (req, res) => {
       ],
     );
 
-    const product = {
+    res.status(201).json({
       id,
       slug,
       name: data.name || "",
@@ -196,12 +214,10 @@ app.post("/api/products", async (req, res) => {
       shippingInfo: data.shippingInfo || "",
       returnsPolicy: data.returnsPolicy || "",
       inventory: data.inventory || {},
-    };
-
-    res.status(201).json(product);
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Failed to create product" });
+    res.status(500).json({ message: "Failed to create product", error: error.message });
   }
 });
 
@@ -262,12 +278,7 @@ app.delete("/api/products/:id", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "../dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist", "index.html"));
-});
-
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`✅ API server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ API server running on port ${PORT}`);
 });
