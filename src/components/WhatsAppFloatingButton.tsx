@@ -3,7 +3,7 @@ import { createWhatsAppLink } from "../utils/whatsapp";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppFloatingButton: React.FC = () => {
-  const message = "Bonjour, je souhaite commander via WhatsApp.\n\nMerci.";
+  const message = "Bonjour, je souhaite Order via WhatsApp.\n\nMerci.";
   const url = createWhatsAppLink(message);
 
   return (
@@ -13,7 +13,7 @@ const WhatsAppFloatingButton: React.FC = () => {
         target="_blank"
         rel="noreferrer"
         className="hidden md:flex items-center gap-3 rounded-full bg-[#25d366] px-5 py-3 text-white shadow-2xl transition-all duration-300 hover:bg-[#20b857]"
-        aria-label="Commander via WhatsApp"
+        aria-label="Order via WhatsApp"
       >
         <FaWhatsapp size={30} />
       
@@ -23,7 +23,7 @@ const WhatsAppFloatingButton: React.FC = () => {
         target="_blank"
         rel="noreferrer"
         className="flex w-full max-w-xs items-center justify-center gap-3 rounded-full bg-[#25d366] px-5 py-3 text-sm font-semibold text-white shadow-2xl transition-all duration-300 hover:bg-[#20b857] md:hidden"
-        aria-label="Commander via WhatsApp"
+        aria-label="Order via WhatsApp"
       >
         <FaWhatsapp size={30} />
       </a>
