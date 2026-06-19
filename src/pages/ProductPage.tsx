@@ -139,7 +139,7 @@ const ProductPage: React.FC = () => {
   const accordionItems = [
     {
       id: "details",
-      title: "Détails du produit",
+      title: "Product details",
       content: (
         <div>
           <p className="font-inter text-sm text-gray-600 leading-relaxed">
@@ -147,10 +147,9 @@ const ProductPage: React.FC = () => {
           </p>
           <div className="mt-4 space-y-1">
             <p className="font-inter text-sm text-gray-600">
-              <span className="text-[#1a1a1a] font-medium">Catégorie:</span>{" "}
+              <span className="text-[#1a1a1a] font-medium">Category:</span>{" "}
               {product.category.charAt(0).toUpperCase() +
                 product.category.slice(1)}{" "}
-              Robe
             </p>
           </div>
         </div>
@@ -158,33 +157,12 @@ const ProductPage: React.FC = () => {
     },
     {
       id: "shipping",
-      title: "EXPÉDITION & Livraison",
+      title: "Shipping & Delivery",
       content: (
         <div className="space-y-3">
           <div className="flex items-start gap-3">
             <p className="font-inter text-sm text-gray-600">
-              Chez Siréna, la livraison est entièrement gratuite sur
-              toutes les commandes. Chaque colis est préparé avec soin et
-              expédié dans les meilleurs délais afin de garantir une expérience
-              rapide, fiable et sécurisée. Nous mettons tout en œuvre pour que
-              vos pièces arrivent chez vous dans un état impeccable.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: "returns",
-      title: "Retours & Échanges",
-      content: (
-        <div className="space-y-3">
-          <div className="flex items-start gap-3">
-            <p className="font-inter text-sm text-gray-600">
-              Nous souhaitons que chaque cliente soit pleinement satisfaite de
-              son achat. Si un article ne vous convient pas, vous pouvez
-              demander un échange selon nos conditions en vigueur. Les retours
-              sont traités avec soin et dans les meilleurs délais. Notre service
-              client reste à votre écoute pour vous accompagner à chaque étape.
+              At Siréna, we offer **free delivery on orders over 800 DHS**. Every package is carefully prepared and shipped promptly to ensure a fast, reliable, and secure experience. We are committed to making sure your pieces arrive at your doorstep in impeccable condition.
             </p>
           </div>
         </div>
@@ -197,11 +175,7 @@ const ProductPage: React.FC = () => {
         <div className="space-y-3">
           <div className="flex items-start gap-3">
             <p className="font-inter text-sm text-gray-600">
-              Pour préserver la qualité et la durabilité de vos pièces Siréna By
-              S&L, nous recommandons un entretien délicat adapté à chaque
-              vêtement. Privilégiez un lavage doux ou un nettoyage professionnel
-              lorsque cela est nécessaire, et évitez les températures élevées
-              afin de conserver la texture, la couleur et l’élégance des tissus.
+              To preserve the quality and longevity of your Siréna By S&L pieces, we recommend gentle care tailored to each garment. Opt for delicate washing or professional cleaning when necessary, and avoid high temperatures to maintain the texture, color, and elegance of the fabrics.
             </p>
           </div>
         </div>
@@ -358,7 +332,7 @@ const ProductPage: React.FC = () => {
                 {/* Color Selector */}
                 <div className="mt-6">
                   <p className="font-inter text-[11px] uppercase tracking-[0.15em] text-gray-500 mb-3">
-                    Colour:{" "}
+                    Colors:{" "}
                     <span className="text-[#1a1a1a] normal-case">
                       {selectedColor}
                     </span>
@@ -384,10 +358,10 @@ const ProductPage: React.FC = () => {
                 <div className="mt-6">
                   <div className="flex items-center justify-between mb-3">
                     <p className="font-inter text-[11px] uppercase tracking-[0.15em] text-gray-500">
-                      Taille{" "}
+                      Size{" "}
                       {!selectedSize && (
                         <span className="text-rose-400 normal-case tracking-normal text-[11px] ml-1">
-                          — Veuillez choisir
+                          — Please select
                         </span>
                       )}
                     </p>
@@ -419,7 +393,7 @@ const ProductPage: React.FC = () => {
                 {/* Quantity */}
                 <div className="mt-6">
                   <p className="font-inter text-[11px] uppercase tracking-[0.15em] text-gray-500 mb-3">
-                    Quantité
+                    Quantity
                   </p>
                   <div className="flex items-center border border-gray-200 w-fit">
                     <button
@@ -453,7 +427,7 @@ const ProductPage: React.FC = () => {
                     }`}
                   >
                     <MessageSquare size={16} strokeWidth={1.5} />
-                    Commander via WhatsApp
+                    Order via WhatsApp
                   </motion.button>
                   <motion.button
                     onClick={() => toggleWishlist(product)}
@@ -476,9 +450,8 @@ const ProductPage: React.FC = () => {
                 {/* Trust Badges */}
                 <div className="flex items-center gap-6 mt-6 py-5 border-t border-gray-100">
                   {[
-                    { Icon: Truck, text: "Livraison gratuite" },
-                    { Icon: RotateCcw, text: "Retours sous 14 jours" },
-                    { Icon: MessageSquare, text: "Commander via WhatsApp" },
+                    { Icon: Truck, text: "Free delivery on orders over 800 DH" },
+                    { Icon: MessageSquare, text: "Order via WhatsApp" },
                   ].map(({ Icon, text }) => (
                     <div key={text} className="flex items-center gap-2">
                       <Icon
