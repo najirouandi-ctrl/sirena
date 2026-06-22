@@ -99,9 +99,7 @@ const AboutPage: React.FC = () => {
               "
             </span>
             <p className="font-playfair text-2xl md:text-3xl text-[#1a1a1a] -mt-8 leading-relaxed italic">
-              Inspired by both timeless fashion and contemporary trends, our
-              collections are made to elevate everyday moments with effortless
-              sophistication.
+              Serena is a brand that blends softness and modern style. It’s made for people who love simple yet elegant fashion. It can be worn in daily life as well as for events and special occasions
             </p>
             <div className="flex items-center justify-center gap-4 mt-8">
               <div className="h-px w-12 bg-[#c9a96e]" />
