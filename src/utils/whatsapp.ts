@@ -1,4 +1,4 @@
-export const WHATSAPP_PHONE_NUMBER = "212688031457";
+export const WHATSAPP_PHONE_NUMBER = "212649680033";
 
 export const createWhatsAppMessage = ({
   name,
