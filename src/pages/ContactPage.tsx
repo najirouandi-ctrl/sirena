@@ -161,7 +161,7 @@ const ContactPage: React.FC = () => {
                     Instagram
                   </a>
                   <a
-                    href="https://wa.me/212688031457"
+                    href="https://wa.me/212649680033"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-inter text-[11px] uppercase tracking-widest text-gray-500 hover:text-[#c9a96e] transition-colors border border-gray-200 hover:border-[#c9a96e] px-3 py-2"
