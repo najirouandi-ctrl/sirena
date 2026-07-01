@@ -190,7 +190,7 @@ const PrivacyPage: React.FC = () => {
               ✉️ errami01@icloud.com
             </p>
             <p className="font-inter text-sm text-gray-400">
-              📞 +212 6 88 03 14 57
+              📞 +212 6 49 68 00 33
             </p>
           </div>
         </motion.div>
