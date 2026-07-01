@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
               </a>
 
               <a
-                href="https://wa.me/212688031457"
+                href="https://wa.me/212649680033"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
