@@ -21,7 +21,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "https://sirena-production.up.railway.app/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:3001/api";
 
 const makeId = () => `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
 const slugify = (s: string) =>
