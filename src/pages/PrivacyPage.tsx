@@ -116,8 +116,8 @@ const PrivacyPage: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="font-inter text-sm text-gray-500 leading-relaxed mb-12 border-l-2 border-[#c9a96e] pl-5"
         >
-          Chez Siréna, votre confidentialité est aussi importante pour
-          nous que la qualité de nos collections. Nous traitons vos informations
+          Chez Siréna, votre confidentialité est aussi importante pour nous que
+          la qualité de nos collections. Nous traitons vos informations
           personnelles avec soin, discrétion et intégrité. Cette politique
           explique comment nous collectons, utilisons et protégeons vos données.
         </motion.p>
@@ -183,7 +183,8 @@ const PrivacyPage: React.FC = () => {
             Questions sur votre confidentialité ?
           </h3>
           <p className="font-inter text-sm text-gray-500 mt-3 leading-relaxed">
-            Si vous avez des questions concernant cette politique ou la gestion de vos données, vous pouvez nous contacter :
+            Si vous avez des questions concernant cette politique ou la gestion
+            de vos données, vous pouvez nous contacter :
           </p>
           <div className="mt-4 space-y-1">
             <p className="font-inter text-sm text-[#1a1a1a]">
@@ -198,7 +199,10 @@ const PrivacyPage: React.FC = () => {
         {/* Terms Note */}
         <div className="mt-8 pt-8 border-t border-gray-100">
           <p className="font-inter text-xs text-gray-400 leading-relaxed">
-            En utilisant notre site, vous acceptez notre Politique de confidentialité ainsi que nos Conditions Générales d’Utilisation. Nous appliquons les normes internationales de protection des données, notamment le RGPD.
+            En utilisant notre site, vous acceptez notre Politique de
+            confidentialité ainsi que nos Conditions Générales d’Utilisation.
+            Nous appliquons les normes internationales de protection des
+            données, notamment le RGPD.
           </p>
         </div>
       </div>
