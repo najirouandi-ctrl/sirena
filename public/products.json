@@ -1,0 +1,306 @@
+[
+  {
+    "id": "1",
+    "slug": "robe-imp-riale",
+    "name": "Robe impériale",
+    "price": 499,
+    "originalPrice": "",
+    "category": "midi",
+    "description": "Robe satinée au tombé majestueux, sublimée par un dos élégant et une traîne aérienne.",
+    "longDescription": "Robe satinée au tombé majestueux, sublimée par un dos élégant et une traîne aérienne.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781820789/robe4_ayj5cn.png",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781797736/WhatsApp_Image_2026-06-18_at_16.34.00rferfe_xa2nel.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "CHAMPAGNE"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": 0,
+    "isBestSeller": 0,
+    "isSale": 0,
+    "tags": [],
+    "material": "",
+    "careInstructions": [],
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 10,
+      "S": 10,
+      "M": 10
+    },
+    "created_at": "2026-06-15 11:53:36"
+  },
+  {
+    "id": "4",
+    "slug": "robe-aura",
+    "name": "Robe Aura",
+    "price": "399.00",
+    "originalPrice": "",
+    "category": "midi",
+    "description": "Robe sirène blanche entièrement habillée de dentelle délicate.",
+    "longDescription": "Robe sirène blanche entièrement habillée de dentelle délicate.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1782832703/sirena/img-1782832702231-123120182.png",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1782832704/sirena/img-1782832703862-701273504.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "BLANCHE"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": "0",
+    "isBestSeller": "0",
+    "isSale": "0",
+    "tags": "",
+    "material": "",
+    "careInstructions": "",
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 10,
+      "S": 10,
+      "M": 10
+    },
+    "created_at": "2026-06-14 20:51:55"
+  },
+  {
+    "id": "2",
+    "slug": "robe-clipse",
+    "name": "Robe Éclipse",
+    "price": "399.00",
+    "originalPrice": "",
+    "category": "midi",
+    "description": "Robe sirène noire en dentelle délicate.",
+    "longDescription": "Robe sirène noire en dentelle délicate.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781877496/sirena/img-1781877495890-329352557.png",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781877509/sirena/img-1781877508864-710629927.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "Noir"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": "0",
+    "isBestSeller": "0",
+    "isSale": "0",
+    "tags": "",
+    "material": "",
+    "careInstructions": "",
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 10,
+      "S": 10,
+      "M": 10
+    },
+    "created_at": "2026-06-14 22:29:14"
+  },
+  {
+    "id": "3",
+    "slug": "robe-noble",
+    "name": "Robe Noble",
+    "price": "499.00",
+    "originalPrice": "",
+    "category": "midi",
+    "description": "Robe sirène blanche sublimée par une dentelle noire délicate.",
+    "longDescription": "Robe sirène blanche sublimée par une dentelle noire délicate.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781820796/robe3_zmrhgy.png",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781797736/frfeferfe_vqbmfd.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "BLANCHE"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": "0",
+    "isBestSeller": "0",
+    "isSale": "0",
+    "tags": "",
+    "material": "",
+    "careInstructions": "",
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 10,
+      "S": 10,
+      "M": 10
+    },
+    "created_at": "2026-06-14 13:55:06"
+  },
+  {
+    "id": "2934d94c-65e6-43c9-9f18-288bbb4790cc",
+    "slug": "bodysuit-beige",
+    "name": "Bodysuit Beige",
+    "price": "249.00",
+    "originalPrice": "",
+    "category": "mini",
+    "description": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "longDescription": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781797737/WhatsApp_Image_2026-06-18_at_16.29.50rgrg_s1l9ok.jpg",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781793918/img-1781438173860-669590713_uor746.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "Beige"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": "0",
+    "isBestSeller": "0",
+    "isSale": "0",
+    "tags": "",
+    "material": "",
+    "careInstructions": "",
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 6,
+      "S": 7,
+      "M": 7
+    },
+    "created_at": "2026-06-18 16:14:25"
+  },
+  {
+    "id": "6238e870-cd27-49a8-898b-bdb66b2517e9",
+    "slug": "bodysuit",
+    "name": "Bodysuit Black",
+    "price": "249.00",
+    "originalPrice": "",
+    "category": "mini",
+    "description": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "longDescription": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781797738/WhatsApp_Image_2026-06-18_at_16.29.50_khscbt.jpg",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781793918/img-1781438173836-876414261_wvgkqb.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "NOIR"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": "0",
+    "isBestSeller": "0",
+    "isSale": "0",
+    "tags": "",
+    "material": "",
+    "careInstructions": "",
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 6,
+      "S": 7,
+      "M": 7
+    },
+    "created_at": "2026-06-14 11:57:37"
+  },
+  {
+    "id": "6fad16af-d08b-4d6f-93e1-14a980a6d539",
+    "slug": "bodysuit-white",
+    "name": "Bodysuit White",
+    "price": "249.00",
+    "originalPrice": "",
+    "category": "mini",
+    "description": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "longDescription": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781797737/WhatsApp_Image_2026-06-18_at_16.29.51rgr_mfiuyy.jpg",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781793918/img-1781438173872-123721003_grh6gw.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "BLANC"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": "0",
+    "isBestSeller": "0",
+    "isSale": "0",
+    "tags": "",
+    "material": "",
+    "careInstructions": "",
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 6,
+      "S": 7,
+      "M": 7
+    },
+    "created_at": "2026-06-18 16:11:06"
+  },
+  {
+    "id": "e41d61da-34ba-4e5f-815b-49d1284dd2c5",
+    "slug": "bodysuit-brown",
+    "name": "Bodysuit Brown",
+    "price": "249.00",
+    "originalPrice": "",
+    "category": "mini",
+    "description": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "longDescription": "Bodysuit gainant conçu pour sculpter délicatement la silhouette.",
+    "images": [
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781797737/WhatsApp_Image_2026-06-18_at_16.29.51ere_cn1isi.jpg",
+      "https://res.cloudinary.com/dqbyiqgna/image/upload/v1781793918/img-1781438173849-285912982_m1cbom.jpg"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "Marron"
+    ],
+    "rating": "0.00",
+    "reviewCount": "0",
+    "isNew": "0",
+    "isBestSeller": "0",
+    "isSale": "0",
+    "tags": "",
+    "material": "",
+    "careInstructions": "",
+    "shippingInfo": "",
+    "returnsPolicy": "",
+    "inventory": {
+      "XS": 0,
+      "S": 0,
+      "M": 0
+    },
+    "created_at": "2026-06-18 16:16:47"
+  }
+]
